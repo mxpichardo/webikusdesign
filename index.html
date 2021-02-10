@@ -26,20 +26,15 @@
 
         <!--CUSTOM CSS-->
         <link rel="stylesheet" href="style.css"> <!--Llamar archivo css-->
-
-        <!--Extra Link-->
-        
-        <!--Extra Link-->
   </head>
-
-  
-     <body>
+  <body id="page-top">
       <!--Navegador-->
-
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <nav class="nav-main" >
+
+
             <img src="img/IKUS.png" alt="LOGO IKUS" class="nav-brand">
-            <ul class="nav justify-content-right">
 
 
             
@@ -49,19 +44,16 @@
             <li> <a href="#">PORTAFOLIO</a> </li>
             <li> <a href="#">NOSOTROS</a>   </li>
             <li> <a href="#">CONTACTO</a>   </li>
+              <!--End Menu-->
+             </ul>
   
-            <!--End Menu-->
-            
-            <ul>
             <ul class="nav-menu-right">
-                <li>
-                <a href="#"> 
-                <li class="fas fa-search"> </li> <!--Agregar Busqueda-->
-                </a>
-                </li>
+                
             
             </ul>
            </nav>
+
+           
            <hr> 
            <!--Para agregar linea-->
 
@@ -126,6 +118,8 @@
 
 
       <!-- // END portfolio -->
+
+      <!-- // END portfolio -->
       
       
     <!--Contact-->
@@ -149,28 +143,48 @@
         <p> Por favor no dude en contactarnos, será un placer atenderle.</p>
        <div class="links">
         
-         <a href="https://instragram.com"> <i class="fab fa-instagram"></i> </a>
-         <a href="https://facebook.com"> <i class="fab fa-facebook-f"></i> </a>
-         <a href="https://twitter.com"> <i class="fab fa-twitter"></i> </a>
-         <a href="https://linkdin.com"> <i class="fab fa-linkedin"></i> </a>
+         <a href="https://www.instagram.com/ikusdesigns/?igshid=17i379uht4bgh"> <i class="fab fa-instagram"></i> </a>
+         <a href="https://www.facebook.com/ikusdesigns/"> <i class="fab fa-facebook-f"></i> </a>
          <a href="https://youtube.com"> <i class="fab fa-youtube"></i> </a>   
-       </div>
+         <a href="https://www.behance.net/ikusdesigns"> <i class="fab fa-behance"></i> </a>
+         <a href="https://api.whatsapp.com/send?phone=8497542333"> <i class="fab fa-whatsapp"></i> </a>
+
      </section>
     </div>
 
   <!-- Footer Links -->
 <!--Contact-->
 
-
 <!--Contact end-->
-<div class="UP"  >
-	<div class="backToTop">
-    <i class="fa fa-angle-double-up"></i><br>
-    <h5>Regresar arriba</h5>
-</div>
-</div>
 
 
+<!-- script para que funcione al 100% el botón ir arriba -->
+  <script>
+    //invocamos al objeto (window) y a su método (scroll), solo se ejecutara si el usuario hace scroll en la página
+      $(window).scroll(function(){
+        if($(this).scrollTop() > 300){ //condición a cumplirse cuando el usuario aya bajado 301px a más.
+        $("#js_up").slideDown(300); //se muestra el botón en 300 mili segundos
+          }else{ // si no
+          $("#js_up").slideUp(300); //se oculta el botón en 300 mili segundos
+     }
+});
+
+//creamos una función accediendo a la etiqueta i en su evento click
+$("#js_up i").on('click', function (e) { 
+  e.preventDefault(); //evita que se ejecute el tag ancla (<a href="#">valor</a>).
+  $("body,html").animate({ // aplicamos la función animate a los tags body y html
+    scrollTop: 0 //al colocar el valor 0 a scrollTop me volverá a la parte inicial de la página
+  },700); //el valor 700 indica que lo ara en 700 mili segundos
+  return false; //rompe el bucle
+});
+</script>
+
+<!--Boton Arriba-->
+
+<a href="#" id="js_up" class="boton-subir">
+  <!-- link del icono http://fontawesome.io/icon/rocket/ -->
+  <i class="fa fa-rocket" aria-hidden="true"></i>
+</a>
 
   <!-- Footer -->
     <div>
@@ -183,6 +197,9 @@
      </footer>
     </div>
 <!--footer end-->
+<!-- librerías js -->
 
+<!-- jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  </body>   
 </html>
